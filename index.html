@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUTMAN - Professionele Chape & Isolatie</title>
+    <style>
+        /* ----- Algemene Reset ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ----- Kleuren ----- */
+        :root {
+            --primary-color: #1e3a8a;
+            --accent-color: #d97706;
+            --light-gray: #f5f5f5;
+            --dark-gray: #555;
+        }
+
+        /* ----- Navigatie ----- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            padding: 1rem 2rem;
+            gap: 2rem;
+        }
+
+        nav li {
+            font-weight: bold;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* ----- Header ----- */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #4b6cb7);
+            color: white;
+            text-align: center;
+            padding: 8rem 1rem 4rem; /* extra top padding voor nav */
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* ----- Call-to-Action knop ----- */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #bf5e04;
+            transform: translateY(-3px);
+        }
+
+        /* ----- Secties ----- */
+        section {
+            padding: 4rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ----- Diensten ----- */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: white;
+            flex: 1 1 250px;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* ----- Historiek / Over ons ----- */
+        .about p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* ----- Contact ----- */
+        .contact {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact a {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* ----- Footer ----- */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        /* ----- Responsive ----- */
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigatie -->
+    <nav>
+        <ul>
+            <li><a href="#diensten">Onze Diensten</a></li>
+            <li><a href="#overons">Historiek</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>HOUTMAN</h1>
+        <p>Professionele chape- en isolatiewerken in Vlaanderen en Wallonië</p>
+        <a href="#contact" class="cta-button">Vraag een offerte aan</a>
+    </header>
+
+    <!-- Diensten -->
+    <section id="diensten">
+        <h2 style="text-align:center; margin-bottom:2rem; color: var(--primary-color);">Onze Diensten</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Cementchape</h3>
+                <p>Hoogwaardige cementchape voor zowel nieuwbouw als renovatie, met perfecte afwerking.</p>
+            </div>
+            <div class="service-card">
+                <h3>PUR-Isolatie</h3>
+                <p>Efficiënte en duurzame PUR-isolatie voor een beter comfort en energiebesparing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historiek / Over ons -->
+    <section id="overons" class="about">
+        <h2 style="text-align:center; margin-bottom:2rem; color: var(--primary-color);">Onze Historiek</h2>
+        <p>Ons chapebedrijf werd in 1996 opgericht door mijn vader, Luc Houtman, met passie voor vakmanschap en oog voor kwaliteit. Vanaf mijn 15e ging ik met hem mee op de werf, waar ik stap voor stap het vak leerde en de liefde voor het ambacht ontwikkelde.</p>
+        <p>In 2014 kwam er een ingrijpende wending toen mijn vader overleed. Sindsdien zet ik met trots en toewijding zijn werk verder. Wat begon als het levenswerk van mijn vader, is vandaag uitgegroeid tot een sterk familiebedrijf dat vakmanschap, betrouwbaarheid en klantgerichtheid hoog in het vaandel draagt.</p>
+        <p>Elke chape die wij leggen, doen we met dezelfde inzet en zorg waarmee mijn vader het ooit begon.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Contacteer ons</h2>
+        <p>📞 <a href="tel:+32495343253">+32 495 34 32 53</a></p>
+        <p>✉️ <a href="mailto:houtman.luc@telenet.be">houtman.luc@telenet.be</a></p>
+        <p>📍 Beukendreef 58, 9401 Ninove (Pollare)</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Houtman. Alle rechten voorbehouden.
+    </footer>
+
+    <!-- ----- Scroll Animatie Script ----- -->
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        const revealSection = () => {
+            const triggerBottom = window.innerHeight * 0.85;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if(sectionTop < triggerBottom){
+                    section.classList.add('show');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealSection);
+        window.addEventListener('load', revealSection);
+    </script>
+</body>
+</html>
